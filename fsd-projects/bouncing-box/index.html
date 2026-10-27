@@ -2,13 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Bouncing Box</title>
+    <title>Bouncing Box & Halloween Portal</title>
     <script src="jquery.min.js"></script>
     <style>
       .box {
         width: 70px;
         height: 70px;
-        background-color: teal;
+        background-color: #eb9f1c;
         font-size: 300%;
         text-align: center;
         user-select: none;
@@ -17,18 +17,36 @@
         top: 100px;
         /* Change me! */
         left: 0px;
+        z-index: 10;
       }
 
       .board {
         height: 100vh;
+        position: relative;
+      }
+
+      #all-contents {
+        padding: 20px;
       }
     </style>
-    <!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
   </head>
 
   <body class="board">
-    <!-- HTML for the box -->
+    <!-- HTML for the box game -->
     <div class="box">?</div>
+
+    <!-- Merged Halloween Content -->
+    <div id="all-contents">
+      <!-- nav goes here (TODO 6) -->
+      <main>
+        <div class="sidebar"></div>
+        <div class="content"></div>
+      </main>
+      <div class="content">
+        <h2>Kerby Simon</h2>
+        <p>Future Reality Tv Star</p>
+      </div>
+    </div>
 
     <script>
       (function () {
@@ -68,11 +86,9 @@
         /////////////////// YOUR CODE BELOW HERE /////////////////////////
         //////////////////////////////////////////////////////////////////
 
-        // TODO 2 - Variable declarations
-
-
-
-
+        // TODO 2 & 4 - Variable declarations
+        var positionX = 0;
+        var points = 0;
 
         /**
          * This Function will be called 20 times/second.
@@ -80,10 +96,9 @@
          * If the box drifts off the screen, turn it around!
          */
         function update() {
-
-        
-
-          
+          // TODO 2 - Increment positionX and dynamically move the box
+          positionX += 10;
+          moveBoxTo(positionX); 
         }
 
         /**
@@ -94,14 +109,13 @@
          * - move the box to the left side of the screen.
          */
         function handleBoxClick() {
+          // TODO 4 - Accumulate points
+          points += 1;
+          changeBoxText(points);
 
-
-
-
+          // TODO 3 - Reset box position to the left side
+          positionX = 0;
         }
-
-
-        
       })();
     </script>
   </body>

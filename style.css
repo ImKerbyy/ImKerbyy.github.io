@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  background: #947706;
+  background: #e25c03;
   color: #222;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
@@ -14,4 +14,26 @@ body {
   min-height: 100vh;
   margin: 0 auto;
   padding: 32px 40px;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(4rem, 10vw, 7rem);
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #4d0141;
+}
+
+.content > p {
+  margin: 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  line-height: 1.2;
+}
+
+.content p {
+  color: #190023;
 }
